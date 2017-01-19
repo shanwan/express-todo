@@ -1,0 +1,24 @@
+<div class="jumbotron">
+  <h1><%= title %></h1>
+</div>
+<div class="container">
+  <h2>ID: <%= todo._id %></h2>
+  <h2>Name: <%= todo.name %></h2>
+  <h2>Description: <%= todo.description %></h2>
+  <h2>Completed: <%= todo.completed %></h2>
+</div>
+
+<div class="container">
+  <p>
+    <form method="POST" action=<%= "/todos/" + todo._id + "?_method=DELETE" %>>
+      <h2>
+        <input type="hidden" name="_id" value="<%= todo._id %>">
+      </h2>
+      <input type="submit" value="Delete">
+    </form>
+
+    <button class="btn btn-primary btn-lg">
+      <a href="/todos/<%= todo._id %>/edit">Click here to edit</a>
+    </button>
+  </p>
+</div>

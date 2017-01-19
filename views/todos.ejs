@@ -1,0 +1,24 @@
+<div class="container-fluid jumbotron">
+  <h1><%= title %></h1>
+</div>
+
+<div class="row container">
+  <% todos.forEach(function(todo) { %>
+  <div class="col-sm-6 col-md-6">
+    <div class="thumbnail">
+        <div class="caption">
+          <ul>
+            <a href="/todos/<%= todo._id %>"><h3><%= todo._id %></h3></a>
+            <li><%= todo.name %></li>
+            <li><%= todo.description %></li>
+            <li><%= todo.completed %></li>
+            <br>
+            <p>
+            <a href="/todos/<%= todo._id %>/edit" class="btn btn-default" role="button">Edit</a>
+            </p>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
